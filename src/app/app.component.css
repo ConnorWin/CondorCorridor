@@ -1,0 +1,15 @@
+.main-page {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+.main-page_content {
+    width: 100%;
+    height: 100%;
+}
+/* #9E8968
+#FFF1DB
+#EBD5B3
+#59809E
+#B2D2EB */

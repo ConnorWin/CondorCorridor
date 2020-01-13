@@ -1,0 +1,8 @@
+.lore {
+    background-color: #FFF1DB;
+}
+.lore-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
