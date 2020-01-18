@@ -1,5 +1,6 @@
 {
   "compileOnSave": false,
+  "types": ["@types/node", "modules.d.ts"],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

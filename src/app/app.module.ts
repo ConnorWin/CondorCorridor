@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { NewsComponent } from './news/news.component';
-import { SessionRecapComponent } from './session-recap/session-recap.component';
-import { LoreComponent } from './lore/lore.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { NewsComponent } from './components/news/news.component';
+import { SessionRecapComponent } from './components/session-recap/session-recap.component';
+import { LoreComponent } from './components/lore/lore.component';
 import { AppRoutingModule } from './app-routing';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { AppRoutingModule } from './app-routing';
     NavigationComponent,
     NewsComponent,
     SessionRecapComponent,
-    LoreComponent
+    LoreComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

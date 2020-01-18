@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
     createAuth0Client({
       domain: "dev-rf-31rpp.auth0.com",
@@ -17,7 +16,7 @@ export class AuthService {
       redirect_uri: `${window.location.origin}`
     })
   ) as Observable<Auth0Client>).pipe(
-    shareReplay(1), // Every subscription receives the same shared value
+    shareReplay(1),
     catchError(err => throwError(err))
   );
   // Define observables for SDK methods that return promises by default

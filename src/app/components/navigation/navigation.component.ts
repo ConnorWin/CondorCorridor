@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
 })
 export class NavigationComponent implements OnInit {
   private internalNavigations: NavigationLink[] = [
-    {link: '/', title: "News"},
+    {link: '/news', title: "News"},
     {link: '/lore', title: "Lore"},
     {link: '/session-recap', title: "Session Recap"}
   ]
