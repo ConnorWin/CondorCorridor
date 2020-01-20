@@ -4,14 +4,15 @@ import { LoreComponent } from './components/lore/lore.component';
 import { NewsComponent } from './components/news/news.component';
 import { SessionRecapComponent } from './components/session-recap/session-recap.component';
 import { AuthGuard } from './auth.guard';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+import { HomeComponent } from './components/home/home.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
-  { path: 'lore', component: LoreComponent, canActivate: [AuthGuard] },
-  { path: 'news', component: NewsComponent, canActivate: [AuthGuard] },
-  { path: 'session-recap', component: SessionRecapComponent, canActivate: [AuthGuard] },
-  { path: 'news', component: NewsComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
+  { path: 'lore', component: LoreComponent },
+  { path: 'session-recap', component: SessionRecapComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

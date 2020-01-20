@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+import { Article } from '../../models';
 
 @Component({
   selector: 'app-lore',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lore.component.css']
 })
 export class LoreComponent implements OnInit {
+  ngOnInit(): void {
+    this.apiService.getLore().subscribe((result => this.loreArticles = result));
+  }
 
-  constructor() { }
+  loreArticles: Article[] = [];
 
-  ngOnInit() {
+  constructor(private apiService: ApiService) {
+
   }
 
 }

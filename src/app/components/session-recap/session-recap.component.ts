@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from 'src/app/models';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-session-recap',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionRecapComponent implements OnInit {
 
-  constructor() { }
+  ngOnInit(): void {
+    this.apiService.getSessionRecaps().subscribe((result => this.sessionRecapArticles = result));
+  }
 
-  ngOnInit() {
+  sessionRecapArticles: Article[] = [];
+
+  constructor(private apiService: ApiService) {
+
   }
 
 }

@@ -8,6 +8,7 @@ import { AuthService } from '../../auth.service';
 })
 export class NavigationComponent implements OnInit {
   private internalNavigations: NavigationLink[] = [
+    {link: '', title: "Home"},
     {link: '/news', title: "News"},
     {link: '/lore', title: "Lore"},
     {link: '/session-recap', title: "Session Recap"}
