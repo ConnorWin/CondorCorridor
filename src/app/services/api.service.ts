@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment'
+import { Article } from '../models';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,20 +9,19 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public getNewsFeed(): Observable<FeedItem[]> {
-    return this.http.get<FeedItem[]>(`api/news`)
+  public getNewsFeed(): Observable<Article[]> {
+    return this.http.get<Article[]>(`api/news`)
   }
 
-  public getLore(): Observable<FeedItem[]> {
-    return this.http.get<FeedItem[]>(`api/lore`)
+  public getLore(): Observable<Article[]> {
+    return this.http.get<Article[]>(`api/lore`)
   }
 
-  public getSessionRecaps(): Observable<FeedItem[]> {
-    return this.http.get<FeedItem[]>(`api/session-recaps`)
+  public getSessionRecaps(): Observable<Article[]> {
+    return this.http.get<Article[]>(`api/session-recaps`)
   }
-}
 
-interface FeedItem {
-  title: string,
-  content: string
+  public saveArticle(article: Article) {
+    return this.http.post(`api/save-article`, article)
+  }
 }

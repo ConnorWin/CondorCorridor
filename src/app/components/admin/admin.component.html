@@ -1,0 +1,21 @@
+<div class="admin admin-layout">
+    <h3>Create Article</h3>
+    <form [formGroup]="articleForm" class="form-layout" (ngSubmit)="onSubmit(articleForm.value)">
+        <mat-form-field>
+            <mat-select placeholder="Type" formControlName="type" required>
+                <mat-option *ngFor="let type of articleTypesList" value="{{type}}">{{type}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Title" formControlName="title" required>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea class="content-box-layout" matInput placeholder="Content" formControlName="content" required></textarea>
+        </mat-form-field>
+        <div class="submit-container-layout">
+            <button mat-button type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

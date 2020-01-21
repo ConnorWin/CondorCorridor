@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCardModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatExpansionModule } from '@angular/material'
+import { MatCardModule, MatInputModule, MatSelectModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatExpansionModule } from '@angular/material'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -11,7 +12,8 @@ import { LoreComponent } from './components/lore/lore.component';
 import { AppRoutingModule } from './app-routing';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AdminComponent } from './admin/admin.component';
     SessionRecapComponent,
     LoreComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +35,12 @@ import { AdminComponent } from './admin/admin.component';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
+    MatSelectModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
